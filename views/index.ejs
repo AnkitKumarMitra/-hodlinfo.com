@@ -45,15 +45,24 @@
         </div>
     </div>
     <div class="detail">
-        <p class="light-text">Best Price to Trade</p>
+
         <div class="current-details">
-            <div class="min details"><span>0.1%</span><span>5 Mins</span></div>
-            <div class="hour details"><span>0.96%</span><span>1 Hour</span></div>
-            <div class="price">&#8377 <span class="cost"></span></div>
-            <div class="day details"><span>2.73%</span><span>1 Day</span></div>
-            <div class="days details"><span>7.51%</span><span>7 Days</span></div>
+            <div class="contain">
+                <div class="min details"><span>0.1%</span><span>5 Mins</span></div>
+                <div class="hour details"><span>0.96%</span><span>1 Hour</span></div>
+            </div>
+
+            <div class="price">
+                <p class="light-text">Best Price to Trade</p>
+                &#8377 <span class="cost"></span>
+                <p class="light-text smaller">Average BTC/INR net price including commision</p>
+            </div>
+            <div class="contain">
+                <div class="day details"><span>2.73%</span><span>1 Day</span></div>
+                <div class="days details"><span>7.51%</span><span>7 Days</span></div>
+            </div>
+
         </div>
-        <p class="light-text smaller">Average BTC/INR net price including commision</p>
     </div>
     <table>
         <tr>
@@ -64,26 +73,35 @@
             <th>Difference</th>
             <th>Savings</th>
         </tr>
-        <% result.forEach((crypto, index) => { %>
+        <% result.forEach((crypto, index)=> { %>
             <tr>
-                <td><%= index+1 %></td>
-                <td><%= crypto.name %></td>
-                <td><%= crypto.last %></td>
-                <td>&#8377 <%= crypto.buy %>/ &#8377 <%= crypto.sell %></td>
+                <td>
+                    <%= index+1 %>
+                </td>
+                <td>
+                    <%= crypto.name %>
+                </td>
+                <td>
+                    <%= crypto.last %>
+                </td>
+                <td>&#8377 <%= crypto.buy %>/ &#8377 <%= crypto.sell %>
+                </td>
                 <td class="<%= crypto.percentageDifference < 0 ? 'negative' : 'positive' %>">
                     <% if (crypto.percentageDifference < 0) { %>
                         -
-                    <% }%>
-                    <%= Math.abs(crypto.percentageDifference).toFixed(2) %>%</td>
+                        <% }%>
+                            <%= Math.abs(crypto.percentageDifference).toFixed(2) %>%
+                </td>
                 <td class="<%= crypto.savingsInRupees < 0 ? 'negative' : 'positive' %>">
                     <% if (crypto.savingsInRupees < 0) { %>
                         <i class="fas fa-caret-down negative"></i>
-                    <% } else if (crypto.savingsInRupees > 0){ %>
-                        <i class="fas fa-caret-up positive"></i>
-                    <% }%>
-                    <%= Math.abs(crypto.savingsInRupees).toFixed(2) %></td>
+                        <% } else if (crypto.savingsInRupees> 0){ %>
+                            <i class="fas fa-caret-up positive"></i>
+                            <% }%>
+                                <%= Math.abs(crypto.savingsInRupees).toFixed(2) %>
+                </td>
             </tr>
-        <% }); %>
+            <% }); %>
     </table>
 
     <script src="scripts/script.js"></script>
