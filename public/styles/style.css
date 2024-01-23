@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@font-face {
+    font-family: 'AsteroneDemo';
+    src: url('../fonts/Asterone\ DEMO.ttf') format('truetype');
+}
+
+:root {
+    --primary-color: rgb(25, 29, 40);
+    --secondary-color: #edf2fc;
+    --tertiary-color: rgb(46, 56, 65);
+}
+
+.dark-theme {
+    --primary-color: #edf2fc;
+    --secondary-color: rgb(25, 29, 40);
+    --tertiary-color: rgb(155, 235, 236);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+    color: var(--secondary-color);
+}
+
+body {
+    background-color: var(--primary-color);
+    padding: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-family: 'AsteroneDemo', sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(108, 202, 203);
+}
+
+.currency-selection {
+    display: flex;
+    gap: 20px;
+}
+
+.currency-selection select, .currency-selection button {
+    background-color: var(--tertiary-color);
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 3px 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.currency-selection select option {
+    color: #edf2fc;
+}
+
+.connect {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.number {
+    border: 3px solid rgb(108, 202, 203);
+    border-radius: 50%;
+    padding: 0 5px;
+}
+
+.telegram {
+    background-color: rgb(108, 202, 203);
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.telegram a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #edf2fc;
+}
+
+.telegram a i{
+    color: #edf2fc;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--tertiary-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(108, 202, 203);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--tertiary-color);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.light-text {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: rgb(129, 131, 137);
+}
+
+.smaller {
+    font-size: 1.5rem;
+}
+
+.current-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details span:nth-child(1) {
+    color: rgb(108, 202, 203);
+    font-size: 2.3rem;
+}
+
+.details span:nth-child(2) {
+    font-size: 1.3rem;
+    color: rgb(129, 131, 137);
+}
+
+.price {
+    font-size: 5rem;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    color: rgb(129, 131, 137);
+}
+
+th, td {
+    font-size: 1.6rem;
+    padding: 8px;
+    text-align: center;
+}
+
+.negative {
+    color: red;
+}
+
+.positive {
+    color: rgb(108, 202, 203);
+}
